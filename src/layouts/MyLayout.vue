@@ -33,6 +33,11 @@
         inset-delimiter
       >
         <q-list-header>Essential Links</q-list-header>
+
+        <q-item to="/overview">
+          <q-item-side icon="border_inner"/>
+          <q-item-main label="4 Feldertafel" sublabel="Alles auf einen Blick"/>
+        </q-item>
         <q-item to="/weekly">
           <q-item-side icon="calendar_today"/>
           <q-item-main label="Weekly starten" sublabel="Teilnehmer und Inhalte"/>
