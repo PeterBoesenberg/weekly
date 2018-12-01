@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
-    "build": "quasar build && cp web.config dist"
+    "build": "quasar build"
   },
   "dependencies": {},
   "devDependencies": {
