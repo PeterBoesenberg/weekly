@@ -1,18 +1,13 @@
 <template>
-  <q-page>
-    <div class="quadrant"><tasks/></div>
-    <div class="quadrant"><okr/></div>
-    <div class="quadrant"><backlog/></div>
-    <div class="quadrant"><health/></div>
+  <q-page class="row">
+    <div class="col-md-6 col-xs-12"><okr/></div>
+    <div class="col-md-6 col-xs-12"><health/></div>
+    <div class="col-md-6 col-xs-12"><tasks/></div>
+    <div class="col-md-6 col-xs-12"><backlog/></div>
   </q-page>
 </template>
 
 <style>
-.quadrant{
-  width: 50%;
-  height: 50vh;
-  display: inline-block;
-}
 </style>
 
 <script>

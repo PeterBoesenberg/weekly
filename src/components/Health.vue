@@ -1,23 +1,19 @@
 <template>
   <div>
-    <q-card>
-    <q-card-title>
-      Health Metriken
-    </q-card-title>
-    <q-card-separator />
-    <q-card-main>
-      <q-list>
-        <q-item >
-          <q-item-main label="Hubspot aktiv nutzen" sublabel=""/>
-          <q-item-side right icon="favorite" class="text-positive"/>
-        </q-item>
-        <q-item >
-          <q-item-main label="Schnelle Entscheidungen treffen" sublabel=""/>
-          <q-item-side right icon="favorite" class="text-positive"/>
-        </q-item>
-      </q-list>
-    </q-card-main>
-  </q-card>
+    <q-field
+      :label="metric.label"
+      v-for="(metric, index) in healthMetrics" :key="metric.label"
+    >
+      <q-option-group
+          color="secondary"
+          v-model="healthMetrics[index].value"
+          :options="[
+            { label: 'Rot', value: 'red', color: 'error' },
+            { label: 'Gelb', value: 'yellow', color: 'warning'},
+            { label: 'Grün', value: 'green', color: 'positive' }
+          ]"
+        />
+    </q-field>
   </div>
 </template>
 
@@ -25,7 +21,18 @@
 export default {
   name: 'HealthComponent',
   data () {
-    return {}
+    return {
+      healthMetrics: [
+        {
+          label: 'Hubspot aktiv nutzen',
+          value: 'green'
+        },
+        {
+          label: 'Schnelle Entscheidungen treffen',
+          value: 'yellow'
+        }
+      ]
+    }
   }
 }
 </script>
