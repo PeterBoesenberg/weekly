@@ -1,25 +1,12 @@
 <template>
    <div>
-    <q-card>
-    <q-card-title>
-      Aufgaben für KW 49
-    </q-card-title>
-    <q-card-separator />
-    <q-card-main>
-      <q-list>
-        <q-item >
-          <q-item-main label="LinkedIn-Leute anschreiben" sublabel=""/>
-        </q-item>
-        <q-item >
-          <q-item-main label="E-Book bei Altkontakten promoten" sublabel=""/>
-        </q-item>
-        <q-item >
-          <q-item-main label="2 Videos aufnehmen" sublabel=""/>
-        </q-item>
+    <q-field
+      v-for="(task, index) in tasks" :key="task.label"
+    >
 
-      </q-list>
-    </q-card-main>
-  </q-card>
+      <q-checkbox v-model="tasks[index].checked" :label="task.label" />
+    </q-field>
+
   </div>
 </template>
 
@@ -27,7 +14,22 @@
 export default {
   name: 'TasksComponent',
   data () {
-    return {}
+    return {
+      tasks: [
+        {
+          label: 'LinkedIn-Leute anschreiben',
+          checked: true
+        },
+        {
+          label: 'E-Book bei Altkontakten promoten',
+          checked: false
+        },
+        {
+          label: '2 Videos aufnehmen',
+          checked: false
+        }
+      ]
+    }
   }
 }
 </script>
